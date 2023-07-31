@@ -3,7 +3,7 @@ Estilo de citação em Citation Style Language (CSL), atualizado conforme padrõ
 
 O estilo é desenvolvido por [@virgilinojuca](https://github.com/virgilinojuca) (com contribuições de [@AAguiarCAM](https://github.com/AAguiarCAM)) para uso pessoal, portanto com muitas decisões de gosto próprio. Provavelmente outros encontrarão limitações (mais sobre isso abaixo), mas contribuições são bem vindas.
 
-Para edição do estilo, utilizo o utilitário online [Visual CSL Editor](https://editor.citationstyles.org/visualEditor/).
+Para edição do estilo, utilizo o utilitário online [Visual CSL Editor](https://editor.citationstyles.org/visualEditor/) e o [VSCode](https://github.com/microsoft/vscode/).
 
 ## Sumário
 
