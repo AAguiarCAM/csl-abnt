@@ -16,8 +16,8 @@
       <uri>antenoraguiar.com.br</uri>
     </contributor>
     <category citation-format="author-date"/>
-    <updated>2023-07-24T14:35:12+00:00</updated>
-    <rights>v0.17 (2023-07-24)</rights>
+    <updated>2023-07-31T21:06:04+00:00</updated>
+    <rights>v0.18 (2023-07-31)</rights>
     <category/>
   </info>
   <locale xml:lang="pt-BR">
@@ -86,7 +86,7 @@
   <macro name="author">
     <group delimiter=". ">
       <names variable="author editor collection-editor editorial-director" delimiter="; ">
-        <name delimiter="; " delimiter-precedes-last="always" et-al-min="7" et-al-use-first="1" initialize="false" initialize-with=". " name-as-sort-order="all">
+        <name delimiter="; " and="text" delimiter-precedes-last="always" et-al-min="7" et-al-use-first="1" initialize="false" initialize-with=". " name-as-sort-order="all">
           <name-part name="family" text-case="uppercase"/>
           <name-part name="given"/>
         </name>
@@ -101,8 +101,8 @@
     </group>
   </macro>
   <macro name="author-short">
-    <names variable="author">
-      <name form="short" font-variant="normal" font-weight="normal" delimiter="" and="text" delimiter-precedes-last="never" et-al-min="4" et-al-use-first="1" initialize-with=". " name-as-sort-order="all">
+    <names variable="author" delimiter=" ">
+      <name form="short" font-variant="normal" font-weight="normal" and="text" delimiter-precedes-last="never" et-al-min="4" et-al-use-first="1" initialize-with=". " name-as-sort-order="all">
         <name-part name="family" text-case="capitalize-first" font-style="normal"/>
       </name>
       <et-al font-style="italic"/>
@@ -556,6 +556,16 @@
             <text macro="url"/>
           </group>
         </if>
+        <else-if type="bill">
+          <group delimiter=". " suffix=".">
+            <text macro="author"/>
+            <text variable="number" suffix=". "/>
+            <text macro="title" suffix=". "/>
+            <text variable="references" font-weight="bold"/>
+            <text variable="note"/>
+            <text macro="locators" suffix=". "/>
+          </group>
+        </else-if>
         <else-if type="chapter post-weblog" match="any">
           <group delimiter=". " suffix=".">
             <text macro="author-chapter"/>
@@ -683,16 +693,6 @@
             <text macro="title" suffix=", "/>
             <text macro="issued" suffix=". "/>
             <text variable="note" suffix=". "/>
-          </group>
-        </else-if>
-        <else-if type="bill">
-          <group delimiter=". " suffix=".">
-            <text macro="author"/>
-            <text variable="number" suffix=". "/>
-            <text macro="title" suffix=". "/>
-            <text variable="references" font-weight="bold"/>
-            <text variable="note"/>
-            <text macro="locators" suffix=". "/>
           </group>
         </else-if>
         <else-if type="manuscript">
