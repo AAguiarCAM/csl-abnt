@@ -16,8 +16,8 @@
       <uri>antenoraguiar.com.br</uri>
     </contributor>
     <category citation-format="author-date"/>
-    <updated>2023-08-01T01:07:55+00:00</updated>
-    <rights>v0.18.1 (2023-08-01)</rights>
+    <updated>2023-08-01T03:02:14+00:00</updated>
+    <rights>v0.18 (2023-07-31)</rights>
     <category/>
   </info>
   <locale xml:lang="pt-BR">
@@ -119,7 +119,7 @@
                 <text variable="title" form="short" text-case="uppercase"/>
               </if>
               <else-if type="motion_picture" match="any">
-                <text variable="title" form="short" text-case="uppercase" strip-periods="false" quotes="false" font-variant="normal" vertical-align="baseline" display="left-margin"/>
+                <text variable="title" form="short" text-case="capitalize-first" strip-periods="false" quotes="false" font-variant="normal" vertical-align="baseline" display="left-margin"/>
               </else-if>
               <else>
                 <text variable="title" form="short" text-case="uppercase" suffix="…"/>
@@ -749,7 +749,7 @@
             <text macro="translator"/>
             <text macro="advisor-or-recipient"/>
             <text macro="edition"/>
-            <text variable="abstract" text-case="sentence"/>
+            <text variable="abstract" text-case="capitalize-first"/>
             <text macro="place+publisher+date"/>
             <text macro="physical-description"/>
             <text macro="collection"/>
