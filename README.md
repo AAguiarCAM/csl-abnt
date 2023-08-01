@@ -49,7 +49,7 @@ Seguindo o __Exemplo 2__ do item __8.1.2.2__ (p. 38) da norma, "Ministério da J
 
 > BRASIL. Ministério da Justiça. __Relatório de atividades__. Brasília, DF: Ministério da Justiça, 1993. 28 p.
 
-  
+* Os formatos Legislação `bill` e Estatuto `legislation` utilizam os campos extra `publisher-place` para a cidade de publicação e `publisher` para órgão de publicação (como o proprio órgão, se ato administrativo, Diário Oficial ou Assembleia).
 
 * Diferentemente de outros estilos ABNT disponíveis na internet, URLs de acesso, identificadores (ISBN, ISSN, DOI) e algumas outras informações (como características físicas) aparecerão __sempre__ que informadas, independente do tipo de documento.
 
