@@ -16,8 +16,8 @@
       <uri>antenoraguiar.com.br</uri>
     </contributor>
     <category citation-format="author-date"/>
-    <updated>2023-07-31T21:06:04+00:00</updated>
-    <rights>v0.18 (2023-07-31)</rights>
+    <updated>2023-08-01T01:07:55+00:00</updated>
+    <rights>v0.18.1 (2023-08-01)</rights>
     <category/>
   </info>
   <locale xml:lang="pt-BR">
@@ -101,27 +101,34 @@
     </group>
   </macro>
   <macro name="author-short">
-    <names variable="author" delimiter=" ">
-      <name form="short" font-variant="normal" font-weight="normal" and="text" delimiter-precedes-last="never" et-al-min="4" et-al-use-first="1" initialize-with=". " name-as-sort-order="all">
-        <name-part name="family" text-case="capitalize-first" font-style="normal"/>
-      </name>
-      <et-al font-style="italic"/>
-      <substitute>
-        <names variable="editor"/>
-        <names variable="translator"/>
-        <choose>
-          <if type="paper-conference" match="any">
-            <text variable="title" form="short" text-case="uppercase"/>
-          </if>
-          <else-if type="motion_picture" match="any">
-            <text variable="title" form="short" text-case="uppercase" strip-periods="false" quotes="false" font-variant="normal" vertical-align="baseline" display="left-margin"/>
-          </else-if>
-          <else>
-            <text variable="title" form="short" text-case="uppercase" suffix="…"/>
-          </else>
-        </choose>
-      </substitute>
-    </names>
+    <choose>
+      <if type="legislation" match="all" variable="publisher">
+        <text variable="publisher"/>
+      </if>
+      <else>
+        <names variable="author" delimiter=" ">
+          <name form="short" font-variant="normal" font-weight="normal" and="text" delimiter-precedes-last="never" et-al-min="4" et-al-use-first="1" initialize-with=". " name-as-sort-order="all">
+            <name-part name="family" text-case="capitalize-first" font-style="normal"/>
+          </name>
+          <et-al font-style="italic"/>
+          <substitute>
+            <names variable="editor"/>
+            <names variable="translator"/>
+            <choose>
+              <if type="paper-conference" match="any">
+                <text variable="title" form="short" text-case="uppercase"/>
+              </if>
+              <else-if type="motion_picture" match="any">
+                <text variable="title" form="short" text-case="uppercase" strip-periods="false" quotes="false" font-variant="normal" vertical-align="baseline" display="left-margin"/>
+              </else-if>
+              <else>
+                <text variable="title" form="short" text-case="uppercase" suffix="…"/>
+              </else>
+            </choose>
+          </substitute>
+        </names>
+      </else>
+    </choose>
   </macro>
   <macro name="author-chapter">
     <group delimiter=". ">
@@ -157,7 +164,7 @@
   </macro>
   <macro name="title">
     <choose>
-      <if type="chapter bill article-newspaper article-journal article-magazine paper-conference post-weblog" match="any">
+      <if type="chapter article-newspaper article-journal article-magazine paper-conference post-weblog" match="any">
         <text variable="title" strip-periods="false" quotes="false"/>
       </if>
       <else-if type="personal_communication" match="any">
@@ -335,20 +342,9 @@
   </macro>
   <macro name="locators">
     <choose>
-      <if type="bill">
-        <group prefix=". " delimiter=", ">
-          <date variable="issued">
-            <date-part name="day"/>
-            <date-part prefix=" " name="month" form="short"/>
-            <date-part prefix=" " name="year"/>
-          </date>
-          <text variable="section" prefix="Sec. "/>
-          <text variable="page" prefix="p. " suffix="."/>
-        </group>
-      </if>
-      <else-if type="report" match="any">
+      <if type="report" match="any">
         <text variable="page" prefix="p. "/>
-      </else-if>
+      </if>
       <else>
         <group delimiter=", ">
           <text macro="volume-issue"/>
@@ -556,16 +552,6 @@
             <text macro="url"/>
           </group>
         </if>
-        <else-if type="bill">
-          <group delimiter=". " suffix=".">
-            <text macro="author"/>
-            <text variable="number" suffix=". "/>
-            <text macro="title" suffix=". "/>
-            <text variable="references" font-weight="bold"/>
-            <text variable="note"/>
-            <text macro="locators" suffix=". "/>
-          </group>
-        </else-if>
         <else-if type="chapter post-weblog" match="any">
           <group delimiter=". " suffix=".">
             <text macro="author-chapter"/>
@@ -763,6 +749,7 @@
             <text macro="translator"/>
             <text macro="advisor-or-recipient"/>
             <text macro="edition"/>
+            <text variable="abstract" text-case="sentence"/>
             <text macro="place+publisher+date"/>
             <text macro="physical-description"/>
             <text macro="collection"/>
