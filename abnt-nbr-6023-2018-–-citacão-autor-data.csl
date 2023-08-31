@@ -17,7 +17,7 @@
     </contributor>
     <category citation-format="author-date"/>
     <updated>2023-08-24T21:14:08+00:00</updated>
-    <rights>v0.18.1 (2023-08-24)</rights>
+    <rights>v0.18.2 (2023-08-24)</rights>
     <category/>
   </info>
   <locale xml:lang="pt-BR">
@@ -48,6 +48,7 @@
       </term>
       <term name="editorial-director" form="short"/>
       <term name="script-writer">roteirista</term>
+      <term name="in">In</term>
     </terms>
   </locale>
   <macro name="container-contributors">
