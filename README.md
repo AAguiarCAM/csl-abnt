@@ -1,4 +1,32 @@
+# ESTE ESTILO ESTÁ DESATUALIZADO
 
+## UTILIZEM O ESTILO PADRÃO DA **UFRGS**.
+
+O Estilo está disponível no próprio Zotero.
+
+As instruções de preenchimento estão em https://www.ufrgs.br/bibliotecas/ferramentas/campos-basicos-abnt-zotero/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------
 # CSL da ABNT para Zotero
 
 Estilo de citação em Citation Style Language (CSL), atualizado conforme padrões da ABNT de 2018 (NBR 6023:2018 e NBR 10.520:2002), compatível com Zotero.
